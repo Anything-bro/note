@@ -1,4 +1,5 @@
-name = "notepad-app"
+# wrangler.toml
+name = 'gentle-snow-c772'
 type = "javascript"
 
 account_id = "a681f451b8fcc1d50f7b8b5870b891d2"
