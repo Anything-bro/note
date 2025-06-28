@@ -1,5 +1,6 @@
 
-name = "notepad-worker"
+# wrangler.toml
+name = 'gentle-snow-c772'
 main = "src/index.js"   # This tells Wrangler where your Worker script is
 compatibility_date = "2025-06-28"
 workers_dev = true
