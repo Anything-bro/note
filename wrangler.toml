@@ -1,0 +1,11 @@
+name = "notepad-app"
+type = "javascript"
+
+account_id = "your_account_id"
+workers_dev = true
+compatibility_date = "2023-06-01"
+
+[vars]
+MONGO_URI = "your_mongodb_connection_string"
+LOGIN_USERNAME = "your_username"
+LOGIN_PASSWORD = "your_secure_password"
