@@ -1,7 +1,7 @@
 name = "notepad-app"
 type = "javascript"
 
-account_id = "your_account_id"
+account_id = "a681f451b8fcc1d50f7b8b5870b891d2"
 workers_dev = true
 compatibility_date = "2023-06-01"
 
