@@ -1,10 +1,10 @@
-# wrangler.toml
-name = 'gentle-snow-c772'
-type = "javascript"
+
+name = "notepad-worker"
+main = "src/index.js"   # This tells Wrangler where your Worker script is
+compatibility_date = "2025-06-28"
+workers_dev = true
 
 account_id = "a681f451b8fcc1d50f7b8b5870b891d2"
-workers_dev = true
-compatibility_date = "2023-06-01"
 
 [vars]
 MONGO_URI = "mongodb+srv://NewPomPom:NewPomPom@cluster0.dyu5iru.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
