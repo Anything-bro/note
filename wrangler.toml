@@ -6,6 +6,6 @@ workers_dev = true
 compatibility_date = "2023-06-01"
 
 [vars]
-MONGO_URI = "your_mongodb_connection_string"
-LOGIN_USERNAME = "your_username"
-LOGIN_PASSWORD = "your_secure_password"
+MONGO_URI = "mongodb+srv://NewPomPom:NewPomPom@cluster0.dyu5iru.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+LOGIN_USERNAME = "DeadUserXYZ"
+LOGIN_PASSWORD = "Sahil31"
