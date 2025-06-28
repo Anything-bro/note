@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Secure Notepad</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>My Notes</h1>
+  <form id="note-form">
+    <textarea id="note-text" placeholder="Enter your note here"></textarea>
+    <input type="text" id="note-image" placeholder="Image URL (optional)">
+    <button type="submit">Save Note</button>
+  </form>
+  <div id="notes-container"></div>
+
+  <script>
+    const username = prompt("Username:")
+    const password = prompt("Password:")
+    const authHeader = 'Basic ' + btoa(username + ':' + password)
+
+    async function loadNotes() {
+      const res = await fetch('/api/notes', {
+        headers: { 'Authorization': authHeader }
+      })
+      const notes = await res.json()
+      const container = document.getElementById('notes-container')
+      container.innerHTML = ''
+      notes.forEach(note => {
+        const el = document.createElement('div')
+        el.className = 'note'
+        el.innerHTML = `<p>${note.text}</p>` +
+          (note.imageUrl ? `<img src="${note.imageUrl}" width="200"/>` : '')
+        container.appendChild(el)
+      })
+    }
+
+    document.getElementById('note-form').addEventListener('submit', async (e) => {
+      e.preventDefault()
+      const text = document.getElementById('note-text').value
+      const imageUrl = document.getElementById('note-image').value
+      await fetch('/api/notes', {
+        method: 'POST',
+        headers: {
+          'Authorization': authHeader,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text, imageUrl })
+      })
+      document.getElementById('note-text').value = ''
+      document.getElementById('note-image').value = ''
+      loadNotes()
+    })
+
+    loadNotes()
+  </script>
+</body>
+</html>
